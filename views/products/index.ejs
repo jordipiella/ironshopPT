@@ -1,0 +1,14 @@
+<h1>listado de productos</h1>
+
+<ul>
+  <% products.forEach( (product) => { %>
+    <li>
+      <%= product.name %> - $<%= product.price %>
+      <a href="/products/<%= product._id %>">ver detalles</a>
+      <a href="/products/<%= product._id %>/edit/">editar Producto</a>
+      <form action="/products/<%= product._id %>/delete" method="POST">
+        <button type="submit">Delete Product</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
